@@ -1,5 +1,5 @@
 ---
-title: "Stats_With_R__Intro__Week_1_Quizzes"
+title: "Week 1 Quizzes"
 output: html_document
 ---
 
