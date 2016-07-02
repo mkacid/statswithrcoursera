@@ -1,0 +1,73 @@
+---
+title: "Stats_With_R__Intro__Week_1_Quizzes"
+output: html_document
+---
+
+## Week 1 Practice Quiz
+### Question 1: Which of the following classifications of variable types is false?
+* Whether a student has previously taken a statistics course -> categorical
+* Customer satisfaction: very unsatisfied, unsatisfied, satisfied, very satisfied -> ordinal categorical
+* Student height -> continuous numerical
+* __Population of each state in the US -> continuous numerical__
+
+### Question 2: True or False - If subjects are randomly assigned to treatments, conclusions can be generalized to the population.
+__False__
+
+### Question 3:As part of a statistics project, Andrea would like to collect data on household size in her city. To do so, she asks each person in her statistics class for the size of their household, and reports that her sample is a simple random sample. However, this is not a simple random sample. Which of the following is the best reasoning for why this is not a random sample that is appropriate for this research question?
+* __Andrea did not use any randomization; she took a convenience sample.__
+* Andrea did not block for any variables that might influence the response.
+* Andrea did not use a stratified sample.
+
+### Question 4: Which of the following is not one of the four principles of experimental design?
+* randomize
+* replicate
+* __stratify__
+
+### Question 5: True or False - Stratified sampling allows for controlling for possible confounders in the sampling stage, while blocking allows for controlling for such variables during random assignment.
+__True__
+
+## Week 1 Quiz
+### Question 1:Consider the table below describing a data set of individuals who have registered to volunteer at a public school. Which of the variables are categorical and which are numerical?
+
+Name |Year Born|Phone Number|Number of Siblings|Annual Income
+-----|---------|------------|------------------|-------------
+Jenny|1975     |8929223     |0                 |60,000
+Ted  |1984     |8675309     |3                 |22,500
+...  |...      |...         |...               |...
+
+* _Categorical_: Name, Phone Number, Number of Siblings, _Numerical_: Year Born, Annnual Income
+* _Categorical_: Name, _Numerical_: Year born, Phone Number, Number of Siblings, Annual Income
+* __*Categorical*: Name, Phone Number, _Numerical_: Year Born, Number of Siblings, Annual Income.__
+* All are categorical, none are numerical.
+
+### Question 2: A study is designed to test the effect of type of light on exam performance of students. 180 students are randomly assigned to three classrooms: one that is dimly lit, another with yellow lighting, and a third with white fluorescent lighting, and given the same exam. Which of the following correctly identifies the variables used in the study as explanatory and response?
+* _explanatory_: exam performance, _response_: dimly lit, yellow, white flourescent
+* __*explanatory*: type of light(categorical with three levels), _response_: exam performance__
+* _explanatory_: dimly lit, yellow, white flourescent, _response_: exam performance
+* _explanatory_: type of light(categorical with three levels), _response_: exam performance
+
+### Question 3: In a study published in 2011 in The Proceedings of the National Academy of Sciences, researchers randomly assigned 120 elderly men and women who volunteered to be a part of this study (average age mid-60s) to one of two exercise groups. One group walked around a track three times a week; the other did a variety of less aerobic exercises, including yoga and resistance training with bands. After a year, brain scans showed that among the walkers, the hippocampus (part of the brain responsible for forming memories) had increased in volume by about 2% on average; in the others, it had declined by about 1.4%. Which of the following is false?
+* A causal link between walking and expansion of the hippocampus can be inferred based on these results.
+* __The results of this study can be generalized to all elderly.__
+* The explanatory variable is the type of exercise, and the response variable is the change in volume of the hippocampus
+
+### Question 4: An extraneous variable that is related to the explanatory and response variables and that prevents us from deducing causal relationships based on observational studies is called a _______.
+__Confounding variable__
+
+### Question 5: For your political science class, you'd like to take a survey from a sample of all the Catholic Church members in your town. Your town is divided into 17 neighborhoods, each with similar socio-economic status distribution and ethnic diversity, and each contains a Catholic Church. Rather than trying to obtain a list of all members of all these churches, you decide to pick 3 churches at random. For these churches, you'll ask to get a list of all current members and contact 100 members at random. What kind of design have you used?
+* stratified sampling
+* systematic sampling
+* __multistage sampling__
+* simple random sampling
+* quota sampling
+
+### Question 6: In an experiment, what purpose does blocking serve?
+* __Control for variables that might influence the response__
+* Increase sample size
+* Prevent skewed results.
+* Obtain a random sample.
+
+### Question 7: Which of the following is one of the four principles of experimental design?
+* __control__
+* cluster
+* stratify
