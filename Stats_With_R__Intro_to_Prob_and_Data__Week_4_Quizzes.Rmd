@@ -1,0 +1,251 @@
+---
+title: "Week 4 Quizzes"
+output: html_document
+---
+
+## Practice Quiz
+
+### Question 1: 
+Heights of 10 year-olds, regardless of gender, closely follow a normal 
+distribution with mean 55 inches and standard deviation 6 inches. Which of the 
+following is true?
+
+* __A normal probability plot of heights of a random sample of 500 10 year- olds
+people should show a fairly straight line.__
+* We would expect more 10 year-olds to be shorter than 55 inches than taller.
+* A 10 year-old who is 65 inches tall would be considered more unusual than a 10
+year-old who is 45 inches tall.
+* Roughly 95% of 10 year-olds are between 37 and 73 inches tall.
+
+### Question 2: 
+While it is often assumed that the probabilities of having a boy or a girl are 
+the same, the actual probability of having a boy is slightly higher at 0.51. 
+Suppose a couple plans to have 3 children. What is the probability that exactly 
+2 of them will be boys?
+
+* __.38__ 
+* .48
+* .58
+* .68
+* .78
+
+```{r}
+dbinom(2, size=3, p=.51)
+```
+
+### Question 3: 
+You are about to take a multi-day tour through a national park which is famous 
+for its wildlife. The tour guide tells you that on any given day there's a 61% 
+chance that a visitor will see at least one "big game" animal, and a 39% chance 
+they'll see no big game animals; when the tour guide says "big game", he refers 
+to either a moose or a bear. The guide assures you that big game sightings on a 
+single day are independent of any other day's sightings. Given the information 
+from the tour guide, which of the following calculations cannot be performed 
+using a binomial distribution?
+
+* Calculate the probability that you see big game on at least 8 days of a 10-day
+trip.
+* __Calculate the probability that you see at least 4 big game animals on the 
+first day of a 5-day trip.__
+* Calculate the probability that over a 5-day trip, you see big game on the 
+first day and on every day after.
+* Calculate the probability that you see big game exactly 0 days of an 8-day 
+trip.
+
+### Question 4: 
+Your friend is about to begin an introductory chemistry course at his 
+university. The course has collected data from students on their study habits 
+for many years, and the professor reports that study times (in hours) for the 
+final exam closely follow a normal distribution with mean 24 and standard 
+deviation 4. What percentage of students study 34 hours or more?
+
+* __Less than 2.5%__
+* Between 30% and 35%
+* Between 5% and 10%
+* Between 15% and 20%
+* Between 2.5% and 5%
+
+```{r}
+1-pnorm(34, mean=24, sd=4)
+```
+
+### Question 5: 
+Which of the following is false? Hint: It might be useful to sketch the 
+distributions.
+
+* The Z score for the median of a symmetric distribution is approximately 0.
+* Calculating percentiles based on the Z table is only appropriate for 
+observations that come from (nearly) normal distributions.
+* __The Z score for the median of a left skewed distribution is most likely 
+negative.__
+* Z scores are defined for observations from distributions of any shape and skew.
+
+### Question 6: 
+About 30% of human twins are identical, and the rest are fraternal. Identical 
+twins are necessarily the same sex, half are males and the other half are 
+females. One-quarter of fraternal twins are both male, one-quarter both female, 
+and one-half are mixes: one male, one female. You have just become a parent of 
+twins and are told they are both girls. Given this information, what is the 
+probability that they are identical?
+
+* __46%__
+* 72%
+* 33%
+* 50%
+
+```{r}
+p_ident_f <- .3*.5 #P(Identical & F)=P(Identical)*P(F | Identical)
+p_frat_f <- .7*.25 #P(Fraternal & F)=P(Fraternall)*P(F | Fraternal)
+p_ident_given_f <- p_ident_f / (p_ident_f + p_frat_f)
+p_ident_given_f
+```
+
+### Question 7: 
+Which of the following probabilities can be calculated using the normal 
+approximation to the binomial distribution?
+
+* __A clothing store offers store credit cards and only about 17% of the credit 
+card holders are males. If we were to randomly sample 100 store credit card 
+holders to conduct a survey, what is the probability that at most 20 of the 
+sampled individuals would be males?__
+* Roughly 20% of Americans smoke. What is the probability that in a random 
+sample of 40 people at least 5 are smokers?
+* A 2013 Gallup poll reports that 8% of Americans say the situation in Syria is 
+the most important issue affecting the U.S. In a randomly selected group of 75 
+Americans, what is the probability that more than 10 of them believe the 
+situation in Syria is the most important issue facing the U.S.?
+* A September 2011 Gallup poll suggests that 56% of Americans do not have a 
+great deal of confidence in the mass media to report the news fully, accurately,
+and fairly. What is the probability that in a random sample of 20 people, 10 or 
+more of them have confidence in the mass media?
+
+## Graded Quiz
+
+### Question 1: 
+Suppose IQ scores are normally distributed with mean 100 and standard deviation 
+10. Which of the following is false?
+
+* A normal probability plot of IQ scores of a random sample of 1,000 people 
+should show a straight line.
+* An IQ score greater than 130 is highly unlikely, but not impossible.
+* __An IQ score of 80 is more unusual than an IQ score of 120.__
+* Roughly 68% of people have IQ scores between 90 and 110.
+
+### Question 2: 
+The National Vaccine Information Center estimates that 90% of Americans have had
+the disease chickenpox by the time they reach adulthood. What is the probability
+that exactly 92 out of 100 randomly sampled American adults had chickenpox 
+during childhood?
+
+* .11
+* .1
+* .07
+* .02
+* .14
+
+```{r}
+dbinom(92, size=100, p=.9)
+```
+
+### Question 3: 
+Your roommate loves to eat Chinese food for dinner. He estimates that on any 
+given night, there's a 30% chance he'll choose to eat Chinese food. Although he 
+loves Chinese food, he doesn't like to eat it too much in a short period of 
+time, so on most weeks he eats several different kinds of foods for dinner. 
+Suppose you wanted to calculate the probability that, over the next 7 days, your
+friend eats Chinese food at least 3 times. Which of the following is the most 
+accurate statement about calculating this probability?
+
+* Because we know n = 7, k = 3, and p = 0.30, we can use the binomial 
+distribution to calculate the desired probability.
+* __Because he doesn't like to eat Chinese food too much in a short period of 
+time, p is not really the same for each trial and so we cannot use the binomial 
+distribution to calculate the desired probability.__
+* Because "success" or "failure" have no real meaning in the context of this 
+problem, we cannot use the binomial distribution to calculate the desired 
+probability.
+* Because we do not know the probabilities of your roommate eating any other 
+types of foods, we cannot use the binomial distribution to calculate the desired
+probability.
+* Because we know n = 3, k = 7, and p = 0.30, we can use the binomial 
+distribution to calculate the desired probability.
+
+### Question 4: 
+Suppose you observe a data point x = 12 and it is known that this data point 
+came from a normal distribution with mean 5 and standard deviation 2. Which of 
+the following statements is true regarding the observation of x = 12?
+
+* The observation would not be considered unusual, because we know exactly which
+normal distribution it comes from.
+* The observation would not be considered unusual because it is only about three
+standard deviations from the mean.
+* The observation would be considered unusual because x = 12 is over twice as 
+large as the mean of the distribution.
+* The observation would not be considered unusual, because it comes from a 
+normal distribution.
+* __The observation would be considered unusual because it is farther than three 
+standard deviations from the mean.__
+
+### Question 5: 
+Which of the following is false? Hint: It might be useful to sketch the 
+distributions.
+
+* If observations don't come from a distribution that's nearly normal, we can't 
+calculate percentiles based on the Z table.
+* __If you calculated the Z score for the median of a right skewed distribution, 
+you'd most likely get a positive number.__
+* Regardless of the shape and skew of a distribution, Z scores are still defined
+and can be calculated for observations from that distribution.
+* The Z score for the median of a symmetric distribution is approximately 0.
+
+### Question 6: 
+More than three-quarters of the nation's colleges and universities now offer 
+online classes, and about 23% of college graduates have taken a course online. 
+39% of those who have taken a course online believe that online courses provide 
+the same educational value as one taken in person, a view shared by only 27% of 
+those who have not taken an online course. At a coffee shop you overhear a 
+recent college graduate discussing that she doesn't believe that online courses 
+provide the same educational value as one taken in person. What's the 
+probability that she has taken an online course before?
+
+* .2079
+* .3014
+* __.1997__
+* .1403
+
+```{r}
+p_online <- .23
+p_val_g_online <- .39
+p_val_g_notonline <- .27
+p_notval_online <- p_online * (1-p_val_g_online)
+p_notval_notonline <- (1-p_online) * (1-p_val_g_notonline)
+p_online_g_notval <- p_notval_online / (p_notval_online + p_notval_notonline)
+p_online_g_notval
+```
+
+### Question 7: 
+Your boss is a biologist who needs wood samples from long-leaf pine trees with a
+fungal disease which is only visible under a microscope, and she sends you on an
+assignment to collect the samples. She wants at least 50 different diseased 
+samples. She tells you that approximately 28% of long-leaf pine trees currently 
+have the fungal disease. If you sample 160 long-leaf pine trees at random, what 
+is the probability you'll have at least 50 diseased samples to return to your 
+boss? (Use the normal approximation to calculate this probability.)
+
+* 82%
+* 18%
+* 13%
+* 92%
+* 28%
+
+```{r}
+# normal approximation
+p_disease <- .28
+sample <- 160
+mean <- p_disease * sample
+sd <- sqrt(p_disease * sample * (1-p_disease))
+1-pnorm(49.5, mean=mean, sd=sd)
+
+#exact calculation
+sum(dbinom(50:160, size=160, p=.28))
+```
